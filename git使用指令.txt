@@ -1,0 +1,77 @@
+
+### 1.在cmd下创建仓库名 邮箱 ####
+    1. git config --global user.name hexiaoming
+    2. git config --global user.email 17710146600@163.com
+### 2.cd d: ###
+    1. 去d盘下创建git本地仓库
+    2. mkdir hexiaom //在d盘建个文件夹
+    3. cd hexiaom 去这个文件下创建仓库
+    4. git init 初始化仓库 
+    5. 开始可以把项目拷到这个文件下
+    6. git status //查看状态
+    7. git add . //添加
+    8. git commit -m "提交了" //提交到仓库 
+    9. git rm index.txt //删除文件
+### 3.注册一个码云账号 ###
+    1. 创建一个项目
+    2. 添加许可证 GPL V2 
+    3. 有两种协议 1 https sky
+    4. git push https://gitee.com/hexiaoming124/LianShou.git master//提交代码到远程服务器
+    5. 注意：先git status看一下状态
+    6. git remote add bieming https://gitee.com/hexiaoming124/LianShou.git//起别名
+    7. git bieming master //这样就提交了
+###4.团队合作 ###
+    1. 在项目管理中添加人员//需要知道他的用户名
+    2. git clone https://gitee.com/hexiaoming124/LianShou.git //比如我需要同步别人的代码
+    3. cd LianShou //进入克隆下来这个文件夹
+    4. git add .
+    5. git commit -m "提交项目"
+    4. git push https://gitee.com/hexiaoming124/LianShou.git master //提交这个文件到仓库
+    5. git pull lianshou master //把别人提交的代码同步下来
+### 5.git日志  ###
+    1. git log //查看日志
+    2. git log --pretty=oneline//查看修改的日志精简版
+    3. git reflog //查看日志的版本号
+    4. git reset --hard HEAD^^^^往回切几个版本，一个^往回切一个版本切回去就不能用这个指令在切回来了
+    5. git reset --hard 2b32d //最后的是版本号 这种可以随便切版本
+### 6.分支 ###
+    1. git branch //查看分支
+    2. git branch wechat //创建分支 最后的那个是分支名字
+    2. git checkout wechat //切换到wechat分支
+    3. git add .
+    4. git commit -m "提交内容到wechat分支"
+    5. git checkout master //切换回master分支内容没 改变
+    6. git branch ali //创建另一个分支
+    7. git checkout ali//切换到ali分支
+    8. git add .
+    9. git commit -m "提交内容到ali分支"
+    10. git checkout master //切换回master分支内容没 改变
+    11. git merge ali //把ali分支合并到master
+    12. git checkout wechat //切换到wechat分支  
+     	git add .  
+    	git commit -m "提交内容到wechat分支"
+    	
+    1.  git checkout master //切换回master分支，内容和合并ali那会一样，没改变
+    2.  git merge wechat //把wechat分支合并到master
+    3.  git branch //查看分支
+    4.  git branch -d ali//删除ali分支  
+    5.  git branch -d wechat//删除wechat分支  
+### 7.远程仓库配置 ###
+    1. git remote//查看远程仓库
+    2. git remote//查看远程仓库地址
+    3. git remote remove bieming //删除远程仓库别名
+    4. git remote add origin https://gitee.com/hexiaoming124/LianShou.git//起别名
+    5. git push origin master//把本地仓库改动同步到远程仓库
+### 8.配置公钥 ###
+    1. git remote remove origin//删除远程仓库名
+    2. git remote -v 查看
+    3. git remote add origin git@gitee.com:hexiaoming124/LianShou.git//这里用的是ssh协议
+    4. ssh-keygen -t rsa -C "17710146600@163.com"//这里是当初创建本地git仓库填写的邮箱
+    5. 回车点几次最后生成下边那样的密钥：
+    6. Your public key has been saved in /c/Users/Administrator/.ssh/id_rsa.pub.//在c/Users/Administrator/.ssh下的id_rsa.pub就是那个公钥，打开那个文件，把内容复制到码云上的SSH公钥哪里保存
+    7. 最后 git push origin master 同步远程仓库的时候就不用在输密码了。
+
+
+
+
+
